@@ -1,0 +1,16 @@
+.bg-custom {
+  background: white !important;
+}
+.navbar-nav > li {
+  float: left;
+  position: relative;
+}
+
+.navbar-light .navbar-nav .active a::after {
+  border-bottom: 3px solid #239CA0;
+  bottom: 0px;
+  content: " ";
+  left: 0;
+  position: absolute;
+  right: 0;
+}
