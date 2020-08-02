@@ -1,0 +1,10 @@
+/* Tipografias */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap');
+
+@import 'buttons.scss';
+
+/* Estilos generales para la tipografia */
+html, body{ font-family: 'Open Sans', sans-serif; }
+.open-sans{ font-family: 'Open Sans', sans-serif; }
+.montserrat{ font-family: 'Montserrat', sans-serif; }
