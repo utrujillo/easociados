@@ -8,9 +8,23 @@
   background-color: #24CDD5;
   border: 1px solid #24CDD5;
   transition: background-color 0.5s ease;
-  &:hover{
+  &:hover {
     cursor: pointer;
     background-color: #239CA0;
     border: 1px solid #24CDD5;
   }
+}
+
+.gradient-button{
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    background-image: linear-gradient(to right, #5192E1 0%, #25CCD5 51%, #5192E1 100%);
+    background-size: 200% auto;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    &:hover {
+      cursor: pointer;
+      background-position: right center;
+    }
 }
