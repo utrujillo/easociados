@@ -11,7 +11,7 @@ section.fundador.d-flex.flex-xl-row.flex-lg-row.flex-md-row.flex-sm-column.flex-
         span.align-self-center Leer más
   .f-right.align-self-center.d-flex
     .circular-portrait
-      img(src='@/assets/images/photos/eoleabw.jpg')
+      img(src='@/assets/images/photos/eolea.jpg')
 
 </template>
 

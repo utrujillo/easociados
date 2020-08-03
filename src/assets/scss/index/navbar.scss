@@ -1,9 +1,13 @@
 .bg-custom {
   background: white !important;
 }
-.navbar-nav > li {
-  float: left;
-  position: relative;
+
+.navbar{
+  box-shadow: 0 2px 10px 0 rgba(100, 100, 100, .3);
+  .navbar-nav > li {
+    float: left;
+    position: relative;
+  }
 }
 
 .navbar-light .navbar-nav .active a::after {
