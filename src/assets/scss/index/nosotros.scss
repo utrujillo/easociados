@@ -1,0 +1,85 @@
+article.nosotros-1{
+  background: #23496C;
+  min-height: 680px;
+	width: 100%;
+	.margin-special{ margin-top: -100px; }
+	.timeline{
+		width: 70%;
+		min-height: 100px;
+		position: relative;
+		.line{
+			width: 95%;
+			height: .5px;
+			background: #FFFFFF;
+			position: absolute;
+			top: 65px;
+			left: 50px;
+		}
+		.spot{
+			background: #239CA0;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			border: 1px solid #FFFFFF;
+			position: relative;
+			transition: all 0.3s ease-in-out;
+			background-size: 200% auto;
+			&:hover{
+				cursor: default;
+				background-image: linear-gradient(to right, #239CA0 0%, #40BABE 51%, #239CA0 100%);
+			}
+			h1 { margin-bottom: 0; }
+			.description{
+				width: 200px;
+				position: absolute;
+				top: 110px;
+				color: white;
+				p {
+					font-size: 22px;
+					text-align: center;
+				}
+				.detail-description{
+					font-size: 18px;
+					text-align: center;
+				}
+			}
+			
+		}
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+	article.nosotros-1 {
+		.timeline{
+			.line{
+				width: 90%;
+			}
+			.spot{
+				.description{
+					p{ font-size: 16px; }
+					.detail-description{ display: none; }
+				}
+			}
+		}
+	}
+}
+
+/* On screens that are 768px or less, set the background color to blue */
+@media screen and (max-width: 768px) {
+	article.nosotros-1 {
+		.margin-special{ margin-top: 0px; }
+		.timeline{
+			.line{
+				display: none;
+			}
+			.spot{
+				.description{
+					top: 0px;
+					left: 100px;
+					width: 250px;
+					p{ margin-bottom: 0; }
+				}
+			}
+		}
+	}
+}
