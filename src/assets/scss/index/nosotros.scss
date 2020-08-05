@@ -66,6 +66,13 @@ article.nosotros-2{
 	}
 }
 
+article.nosotros-3{
+	height: 175px;
+	width: 100%;
+	background: url('~@/assets/images/photos/polygon.png') center center no-repeat;
+}
+
+/* Resoluciones entre 769 y 1200 px */
 @media screen and (min-width: 769px) and (max-width: 1200px) {
 	article.nosotros-1 {
 		.timeline{
@@ -82,7 +89,7 @@ article.nosotros-2{
 	}
 }
 
-/* On screens that are 768px or less, set the background color to blue */
+/* Resoluciones menores a 768px */
 @media screen and (max-width: 768px) {
 	article.nosotros-1 {
 		.margin-special{ margin-top: 0px; }

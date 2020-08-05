@@ -49,6 +49,10 @@ section.nosotros
       .d-flex.justify-content-end.mr-md-5.mr-lg-5.mr-xl-5
         .gradient-button.d-flex.justify-content-center 
           span.align-self-center Leer más
+  //- Parte 3
+  article.nosotros-3.d-flex.justify-content-center.align-items-center
+    h1.montserrat.white.mb-0.text-center Más de 10 años de experiencia nos respaldan
+
 </template>
 
 <script>
