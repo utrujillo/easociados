@@ -2,6 +2,7 @@ article.nosotros-1{
   background: #23496C;
   min-height: 680px;
 	width: 100%;
+	padding: 50px 0;
 	.margin-special{ margin-top: -100px; }
 	.timeline{
 		width: 70%;
@@ -48,6 +49,23 @@ article.nosotros-1{
 	}
 }
 
+article.nosotros-2{
+	min-height: 425px;
+	padding: 50px 0;
+	.us-left{
+		max-width: 500px;
+		max-height: 400px;
+	}
+	.us-right{
+		max-width: 610px;
+		h1{ text-align: right; }
+		p{ 
+			text-align: justify; 
+			font-size: 16px;
+		}
+	}
+}
+
 @media screen and (min-width: 769px) and (max-width: 1200px) {
 	article.nosotros-1 {
 		.timeline{
@@ -79,6 +97,16 @@ article.nosotros-1{
 					width: 250px;
 					p{ margin-bottom: 0; }
 				}
+			}
+		}
+	}
+
+	article.nosotros-2{
+		.us-right{
+			width: 90%;
+			h1{ text-align: center; }
+			.gradient-button{
+				width: 100%;
 			}
 		}
 	}

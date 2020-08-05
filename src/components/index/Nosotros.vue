@@ -1,5 +1,6 @@
 <template lang="pug">
 section.nosotros
+  //- Parte 1
   article.nosotros-1.d-flex.flex-column.justify-content-center.align-items-center
     h1.montserrat.white.text-center.margin-special Nuestro proceso de trabajo
 
@@ -31,6 +32,23 @@ section.nosotros
         .description
           p Control de calidad
           p.detail-description.fw-1 Revision de control de calidad respecto al plan diseñado
+    
+  //- Parte 2
+  article.nosotros-2.d-flex.flex-column.flex-md-row.flex-lg-row.flex-xl-row.justify-content-center
+    .us-left
+      img(src='@/assets/images/photos/coffee.png').img-fluid
+    .us-right.align-self-center
+      h1.montserrat.fw-2.black Permítanos llevar su
+      h1.montserrat
+        span.fw-4.green Negocio
+        span.fw-2  al siguiente nivel
+      p.fw-2.gray.mt-4 Somos un grupo de profesionales con experiencia en la Administración 
+        | Pública, Federal, Estatal y Municipal, quienes se han desempeñado en 
+        | diversos puestos a nivel directivo y técnico, tanto en áreas de gobierno y
+        | operativas, en Dependencias gubernamentales
+      .d-flex.justify-content-end.mr-md-5.mr-lg-5.mr-xl-5
+        .gradient-button.d-flex.justify-content-center 
+          span.align-self-center Leer más
 </template>
 
 <script>
