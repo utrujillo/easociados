@@ -45,7 +45,7 @@ section.nosotros
       p.fw-2.gray.mt-4 Somos un grupo de profesionales con experiencia en la Administración 
         | Pública, Federal, Estatal y Municipal, quienes se han desempeñado en 
         | diversos puestos a nivel directivo y técnico, tanto en áreas de gobierno y
-        | operativas, en Dependencias gubernamentales
+        | operativas, en Dependencias gubernamentales.
       .d-flex.justify-content-end.mr-md-5.mr-lg-5.mr-xl-5
         .gradient-button.d-flex.justify-content-center 
           span.align-self-center Leer más
