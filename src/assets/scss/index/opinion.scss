@@ -1,0 +1,71 @@
+article.bck-opinion{
+  width: 100%;
+  height: 200px;
+  background: url('~@/assets/images/photos/testimonial.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.left-o{
+  width: 375px;
+  .opinion-image-outside{
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+    border: 1px solid #26313C;
+    background: #FFFFFF;
+    margin-top: -112px;
+    .opinion-image-inside{
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+      }
+    }
+  }
+
+  .opinion-text{
+    min-height: 50px;
+    .arrow-left, .arrow-right{
+      width: 32px;
+      height: 32px;
+      background-size: 200% auto;
+      background-image: linear-gradient(to right, #239CA0 0%, #40BABE 51%, #239CA0 100%);
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+      &:hover{
+        cursor: pointer;
+        background-position: right center;
+      }
+    }
+    .title-image{
+      width: 80%;
+      text-align: center;
+    }
+  }
+}
+
+.right-o{
+  width: 50%;
+  p{ text-align: justify; }
+  .stars{
+    .star{
+      width: 24px;
+      height: 24px;
+      background: url('~@/assets/images/icons/star.png') center center no-repeat;
+    }
+  }
+}
+
+/* 
+  ? Sirve para reajustar de manera responsiva la galeria de imagenes
+ */
+ @media screen and (max-width: 964px) {
+  .left-o, .right-o{
+    width: 100%;
+  }
+}

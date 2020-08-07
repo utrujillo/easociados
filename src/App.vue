@@ -7,6 +7,7 @@
     Nosotros2
     Servicios
     Portafolio
+    Opinion
 </template>
 
 <script>
@@ -17,6 +18,7 @@ import Nosotros1 from './components/index/Nosotros1.vue'
 import Nosotros2 from './components/index/Nosotros2.vue'
 import Servicios from './components/index/Servicios.vue'
 import Portafolio from './components/index/Portafolio.vue'
+import Opinion from './components/index/Opinion.vue'
 
 export default {
   name: 'App',
@@ -27,7 +29,8 @@ export default {
     Nosotros1,
     Nosotros2,
     Servicios,
-    Portafolio
+    Portafolio,
+    Opinion
   }
 }
 </script>
