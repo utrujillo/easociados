@@ -3,16 +3,20 @@
     Banner
     Navbar
     Fundador
-    Nosotros
-    Services
+    Nosotros1
+    Nosotros2
+    Servicios1
+    Servicios2
 </template>
 
 <script>
 import Banner from './components/index/Banner.vue'
 import Navbar from './components/index/Navbar.vue'
 import Fundador from './components/index/Fundador.vue'
-import Nosotros from './components/index/Nosotros.vue'
-import Services from './components/index/Services.vue'
+import Nosotros1 from './components/index/Nosotros1.vue'
+import Nosotros2 from './components/index/Nosotros2.vue'
+import Servicios1 from './components/index/Servicios1.vue'
+import Servicios2 from './components/index/Servicios2.vue'
 
 export default {
   name: 'App',
@@ -20,8 +24,10 @@ export default {
     Banner,
     Navbar,
     Fundador,
-    Nosotros,
-    Services
+    Nosotros1,
+    Nosotros2,
+    Servicios1,
+    Servicios2
   }
 }
 </script>
