@@ -1,5 +1,5 @@
 <template lang="pug">
-section.services-1.d-flex.justify-content-center.flex-column
+section.services.d-flex.justify-content-center.flex-column
   h1.montserrat.purple Conoce nuestros servicios
   .squares.d-flex.justify-content-around.flex-lg-row.flex-xl-row.flex-column
     .square.my-1
@@ -45,7 +45,7 @@ section.services-1.d-flex.justify-content-center.flex-column
 
 <script>
 export default {
-  name: 'Servicios1',
+  name: 'Servicios',
 }
 </script>
 

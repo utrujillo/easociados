@@ -1,5 +1,5 @@
 <template lang="pug">
-section.services-2
+section.portfolio
   h5.montserrat.text-center.purple Vamos a explorar
   h1.montserrat.text-center.black2 Nuestro portafolio
   .gallery-images
@@ -47,6 +47,10 @@ section.services-2
 
 <script>
 export default {
-  name: 'Servicios2',
+  name: 'Portafolio',
 }
 </script>
+
+<style lang='scss'>
+  @import './src/assets/scss/index/portafolio.scss'
+</style>

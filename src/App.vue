@@ -5,8 +5,8 @@
     Fundador
     Nosotros1
     Nosotros2
-    Servicios1
-    Servicios2
+    Servicios
+    Portafolio
 </template>
 
 <script>
@@ -15,8 +15,8 @@ import Navbar from './components/index/Navbar.vue'
 import Fundador from './components/index/Fundador.vue'
 import Nosotros1 from './components/index/Nosotros1.vue'
 import Nosotros2 from './components/index/Nosotros2.vue'
-import Servicios1 from './components/index/Servicios1.vue'
-import Servicios2 from './components/index/Servicios2.vue'
+import Servicios from './components/index/Servicios.vue'
+import Portafolio from './components/index/Portafolio.vue'
 
 export default {
   name: 'App',
@@ -26,8 +26,8 @@ export default {
     Fundador,
     Nosotros1,
     Nosotros2,
-    Servicios1,
-    Servicios2
+    Servicios,
+    Portafolio
   }
 }
 </script>
