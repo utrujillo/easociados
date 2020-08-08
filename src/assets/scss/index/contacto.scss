@@ -1,0 +1,48 @@
+section.contacto{
+  background: #23496C;
+  min-height: 645px;
+  .formulario{
+    width: 100%;
+    form{
+      width: 50%;
+      padding: 10px;
+      .form-control{
+        background: rgba(242, 247, 252, .1);
+        border-radius: 8px;
+        color: #FFFFFF;
+        padding: .375rem 1rem;
+        font-weight: 100;
+        &::placeholder{
+          color: #FFFFFF;
+          font-weight: 100;
+        }
+      }
+      .gradient-button{
+        width: 100%;
+      }
+    }
+    .indicaciones{
+      width: 50%;
+      padding: 10px;
+      .contact-services{
+        .icon-service{
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}
+
+/* 
+  TODO Sirve para ajustar el responsive del apartado de contacto
+ */
+ @media screen and (max-width: 990px) {
+  section.contacto{
+    .formulario{
+      form, .indicaciones{
+        width: 100%;
+      }
+    }
+  }
+}
