@@ -10,6 +10,7 @@
     Opinion
     Contacto
     Mapa
+    Footer
 </template>
 
 <script>
@@ -23,6 +24,7 @@ import Portafolio from './components/index/Portafolio.vue'
 import Opinion from './components/index/Opinion.vue'
 import Contacto from './components/index/Contacto.vue'
 import Mapa from './components/index/Mapa.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
@@ -36,7 +38,8 @@ export default {
     Portafolio,
     Opinion,
     Contacto,
-    Mapa
+    Mapa,
+    Footer
   }
 }
 </script>
