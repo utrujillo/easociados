@@ -3,7 +3,7 @@ section.login.d-flex.justify-content-center.align-items-center
   .container.h-100
     .row
       .col-lg-6.pr-lg-0
-        .image.h-100
+        .login-image.h-100
           img(src='@/assets/images/photos/security.jpg').w-100.h-100
       .col-lg-6.pl-lg-0
         .widget.h-100
