@@ -1,5 +1,5 @@
 <template lang="pug">
-  #app.d-flex.justify-content-center.align-items-center.h-100.w-100
+  #app
     router-view
 </template>
 
