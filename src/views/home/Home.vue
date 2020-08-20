@@ -14,18 +14,17 @@ div
 </template>
 
 <script>
-import Banner from '@/components/index/Banner.vue'
-import Navbar from '@/components/index/Navbar.vue'
-import Fundador from '@/components/index/Fundador.vue'
-import Nosotros1 from '@/components/index/Nosotros1.vue'
-import Nosotros2 from '@/components/index/Nosotros2.vue'
-import Servicios from '@/components/index/Servicios.vue'
-import Portafolio from '@/components/index/Portafolio.vue'
-import Opinion from '@/components/index/Opinion.vue'
-import Contacto from '@/components/index/Contacto.vue'
-import Mapa from '@/components/index/Mapa.vue'
-import Footer from '@/components/Footer.vue'
-
+import Banner from '@/views/home/Banner.vue'
+import Navbar from '@/views/home/Navbar.vue'
+import Fundador from '@/views/home/Fundador.vue'
+import Nosotros1 from '@/views/home/Nosotros1.vue'
+import Nosotros2 from '@/views/home/Nosotros2.vue'
+import Servicios from '@/views/home/Servicios.vue'
+import Portafolio from '@/views/home/Portafolio.vue'
+import Opinion from '@/views/home/Opinion.vue'
+import Contacto from '@/views/home/Contacto.vue'
+import Mapa from '@/views/home/Mapa.vue'
+import Footer from '@/views/Footer.vue'
 
 export default {
   name: 'Home',

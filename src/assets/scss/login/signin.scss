@@ -1,0 +1,38 @@
+html, body{ 
+  background: #F6F7F8 !important; 
+  width: 100% !important; 
+  height: 100% !important; 
+  
+  section.login{
+    min-height: 400px;
+    .formulario{
+      width: 100%;
+      form{
+        width: 100%;
+        padding: 10px;
+        .form-control{
+          border: 1px solid #ececec;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          height: 41px;
+          color: #b6b8ba;
+          font-size: 0.875rem;
+          &::placeholder{
+            color: #494748;
+            font-weight: 100;
+          }
+        }
+        .gradient-button{
+          width: 100%;
+        }
+      }
+      .bottom35{ margin-bottom: 35px; }
+    }
+  }
+  .widget{
+    padding: 40px 30px;
+    background: #fff;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  }
+}
