@@ -16,6 +16,8 @@ section.login.d-flex.justify-content-center.align-items-center
 </template>
 
 <script>
+
+
 export default {
   name: 'Login',
   data() {
