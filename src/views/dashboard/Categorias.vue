@@ -30,7 +30,6 @@
                 fas(icon='times', v-if='category.editar', @click="category.editar = false").orange.mr-2
                 fas(icon='trash').red(@click="destroy(category.id)")
               td 
-                
                 input(v-if='category.editar', v-model='category.nombre', @keyup.enter='update(category)').form-control
                 span(v-else) {{ category.nombre }}
               td 
@@ -82,7 +81,7 @@ export default {
           }
         }).catch(error => {
           console.log(`Error al crear categoria ${error}`)
-        })     
+        })
     },
     destroy: function (id) {
       axios.delete(`/v1/categories/${id}`).then(response => {
@@ -90,7 +89,7 @@ export default {
         if( status == 204 )
           this.index()
       }).catch(error => {
-        console.log(`Error al crear categoria ${error}`)
+        console.log(`Error al eliminar categoria ${error}`)
       })
     },
     update: function (item) {
@@ -102,7 +101,7 @@ export default {
         if( status == 200 )
           this.index()
       }).catch(error => {
-        console.log(`Error al crear categoria ${error}`)
+        console.log(`Error al actualizar categoria ${error}`)
       })
     }
   }
