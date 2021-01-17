@@ -2,11 +2,15 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import {store} from './store/store'
+import AOS from 'aos'
+
 
 
 // Bootstrap 4
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
+
+import 'aos/dist/aos.css'
 
 // Font awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -24,5 +28,8 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store: store,
+  created: function () {
+    AOS.init()
+  },
   render: h => h(App),
 }).$mount('#app')
