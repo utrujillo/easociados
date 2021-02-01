@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&display=swap');
 
 @import 'buttons.scss';
+@import 'forms.scss';
 
 /* Estilos generales para la tipografia */
 html, body{ font-family: 'Open Sans', sans-serif; background: #F6F7F8; }
@@ -24,3 +25,5 @@ h1.montserrat{ font-family: 'Montserrat', sans-serif; font-size: 36px; }
 .green{ color: #239CA0; }
 .white{ color: #FFFFFF; }
 .purple{ color: #24CDD5; }
+.red{ color: #E84455; }
+.orange{ color: #FABD4A; }
