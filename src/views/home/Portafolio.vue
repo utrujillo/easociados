@@ -4,50 +4,54 @@ section.portfolio
   h1.montserrat.text-center.black2 Nuestro portafolio
   .gallery-images
     ul.text-center.mt-3.mb-4.fw-2
-      li.active Todos
-      li Consultoría
-      li Tecnología
-      li Mantenimiento
-      li Gestoría ambiental
+      li.active(@click='filterDisplay("all")') Todos
+      li(v-for='category in parentData.categories' @click='filterDisplay( category.id )') {{ category.nombre }}
     
     .images.mx-auto.d-flex.flex-wrap
-      .image-content
-        img(src='@/assets/images/activities/activity1.jpeg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity2.jpg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity3.jpeg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity4.jpg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity5.jpg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity6.jpeg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity7.jpg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity8.jpeg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity9.jpeg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity10.jpg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity11.jpeg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity12.jpg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity13.jpg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity14.jpeg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity15.jpg').img-fluid
-      .image-content
-        img(src='@/assets/images/activities/activity16.jpg').img-fluid
+      .image-content(v-for='image in fotos')
+        img(:src='image | toDisplayImage' v-if="image").img-fluid
 </template>
 
 <script>
 export default {
   name: 'Portafolio',
+  props: { parentData: Object },
+  data () {
+    return {
+      fotos: [],
+      limit: 16
+    }
+  },
+  mounted: function () {
+    this.index()
+  },
+  filters: {
+    toDisplayImage( img ){
+      return `${process.env.VUE_APP_API_IMG}${img}`
+    }
+  },
+  methods: {
+    index () {
+      this.getPictures( this.parentData.jobs )
+    },
+    filterDisplay ( id ) {
+      if( id == 'all' ) {
+        this.index()
+      } else {
+        let jobs = this.parentData.jobs.filter( item => item.category_id === id )
+        this.getPictures( jobs )
+      }
+    },
+    getPictures ( obj ) {
+      this.fotos = []
+      obj.forEach(job => {
+        job.fotos.forEach(foto => {
+          if( this.fotos.length < this.limit )
+            this.fotos.push(foto)
+        });
+      });
+    }
+  }
 }
 </script>
 
