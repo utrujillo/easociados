@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   nav.navbar.navbar-expand-lg.navbar-light.bg-custom
-    a.navbar-brand(href='/dashboard')
+    a.navbar-brand(href='/')
       img.d-inline-block.align-top(src='@/assets/images/icons/navbar_logo.png', width='235', height='50')
     button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarText', aria-controls='navbarText', aria-expanded='false', aria-label='Toggle navigation')
       span.navbar-toggler-icon

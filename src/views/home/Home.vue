@@ -1,11 +1,14 @@
 <template lang="pug">
-div
+.loader(v-if='loading') 
+  .textoloader 
+    h5 Procesando información
+div(v-else='')
   Banner
   Navbar
   Fundador
   Nosotros1
   Nosotros2
-  Servicios
+  Servicios(:parentData='{ categories: categories, jobs: jobs }')
   Portafolio
   Opinion
   Contacto
@@ -40,6 +43,34 @@ export default {
     Contacto,
     Mapa,
     Footer
+  },
+  data () {
+    return {
+      categories: [],
+      jobs: [],
+      loading: true
+    }
+  },
+  mounted: function () {
+    this.index()
+  },
+  methods: {
+    index: function() {
+      const reqCategory = this.$http.get('/v1/categories')
+      const reqJob      = this.$http.get('/v1/jobs')
+      
+      this.$http.all([reqCategory, reqJob])
+      .then(this.$http.spread((...responses) => {
+        // Mostrando las opciones del catalogo dependiendo de la vista
+        this.categories = responses[0].data
+        this.jobs       = responses[1].data
+        this.loading    = false
+      })).catch(errors => {
+        // Lanzar toast
+        console.log(`Error al leer la informacion ${errors}`)
+        this.loading = false
+      })
+    },
   }
 }
 </script>

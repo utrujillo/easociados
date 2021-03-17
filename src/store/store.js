@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 
 Vue.use(Vuex)
-axios.defaults.baseURL = 'http://localhost:3000/api'
+axios.defaults.baseURL = process.env.VUE_APP_API_URL
 
 export const store = new Vuex.Store({
   state: {
@@ -23,9 +23,9 @@ export const store = new Vuex.Store({
     retreiveToken(context, credentials){
       return new Promise( (resolve, reject) => {
         
-        axios.post('/v1/sessions', {
+        axios.post('/v1/login', {
           user: {
-            email: credentials.email,
+            username: credentials.username,
             password: credentials.password
           }
         }).then(response => {

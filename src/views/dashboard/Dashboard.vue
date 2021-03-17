@@ -24,6 +24,9 @@ export default {
       currentComponent: ''
     }
   },
+  mounted () {
+    this.currentComponent = Trabajos
+  },
   methods: {
     /**
      * * Metodo encargado de recibir el elemento seleccioando desde el componente hijo (Navbar)
