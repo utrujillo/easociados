@@ -116,7 +116,7 @@ export default {
         // Mostrando las opciones del catalogo dependiendo de la vista
         this.categories = responses[0].data
         this.jobs       = responses[1].data.map( o => ({...o, editar: false }) )
-        this.loading         = false
+        this.loading    = false
       })).catch(errors => {
         // Lanzar toast
         console.log(`Error al leer la informacion ${errors}`)

@@ -9,7 +9,7 @@ div(v-else='')
   Nosotros1
   Nosotros2
   Servicios(:parentData='{ categories: categories, jobs: jobs }')
-  Portafolio
+  Portafolio(:parentData='{ categories: categories, jobs: jobs }')
   Opinion
   Contacto
   Mapa
