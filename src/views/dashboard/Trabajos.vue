@@ -56,10 +56,9 @@ div(v-else='')
         .modal-body
           input.form-control-file(type='file', id='fotos', ref="fotos", @change="handleFileUpload()", multiple)
           .row.mt-3
-            .col-sm-12.d-flex
-              div.container-img.d-flex.align-items-center(v-for='image in images')
-                img.img-thumbnail(:src='image | toDisplayImage' class='img-fluid' v-if="image")
-            
+            .images.mx-auto.d-flex.flex-wrap(v-for='image in images')
+              .image-content
+                img(:src='image | toDisplayImage' v-if="image").img-fluid.img-thumbnail
         .modal-footer
           button.btn.btn-danger(type='button' data-dismiss='modal') Cerrar
           button.btn.btn-primary(type='button', @click='uploadImage') Guardar
@@ -206,7 +205,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.svg-inline--fa:hover{
-  cursor: pointer;
-}
+  @import './src/assets/scss/dashboard/dashboard.scss';
+  .svg-inline--fa:hover{ 
+    cursor: pointer; 
+  }
 </style>
