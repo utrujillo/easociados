@@ -11,6 +11,9 @@ div
           a.nav-link(v-on:click="emitToParent('cat')") Categorias
         li.nav-item
           a.nav-link(v-on:click="emitToParent('work')") Trabajos
+        li.nav-item
+          a.nav-link
+            fas.green.mr-1(icon='sign-out-alt', @click="closeSession", title="Cerrar sesion")
 </template>
 
 <script>
@@ -21,6 +24,10 @@ export default {
   methods: {
     emitToParent: function(component){
       this.$emit('dinamycComponent', component)
+    },
+    closeSession: function() {
+      localStorage.removeItem('access_token');
+      this.$router.push("/")
     }
   }
 }

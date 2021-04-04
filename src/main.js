@@ -19,10 +19,10 @@ import 'aos/dist/aos.css'
 
 // Font awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faImage, faPen, faPlus, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faImage, faPen, faPlus, faTimes, faTrash, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faPen, faPlus, faTimes, faTrash, faImage)
+library.add(faPen, faPlus, faTimes, faTrash, faImage, faSignOutAlt)
 
 Vue.component('fas', FontAwesomeIcon)
 

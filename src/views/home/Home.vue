@@ -27,7 +27,7 @@ import Portafolio from '@/views/home/Portafolio.vue'
 import Opinion from '@/views/home/Opinion.vue'
 import Contacto from '@/views/home/Contacto.vue'
 import Mapa from '@/views/home/Mapa.vue'
-import Footer from '@/views/Footer.vue'
+import Footer from '@/views/home/Footer.vue'
 
 export default {
   name: 'Home',
