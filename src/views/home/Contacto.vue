@@ -1,5 +1,5 @@
 <template lang="pug">
-section.contacto.d-flex.flex-column.justify-content-center.align-items-center.p-5
+section#contacto.contacto.d-flex.flex-column.justify-content-center.align-items-center.p-5
   div(data-aos='flip-up' data-aos-duration='500')
     h1.montserrat.white Contactanos
   div(data-aos='flip-up' data-aos-delay='200' data-aos-duration='500')

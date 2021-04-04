@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.banner
+  section#inicio.banner
     .shape-layer.d-flex.flex-column.justify-content-center.align-items-center
       .banner-logo
         img(src='@/assets/images/icons/banner_logo.png').img-fluid

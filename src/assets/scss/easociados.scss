@@ -30,3 +30,10 @@ h1.montserrat{ font-family: 'Montserrat', sans-serif; font-size: 36px; }
 .orange{ color: #FABD4A; }
 
 .container-img{ width: 200px; height: 200px; }
+
+.sticky{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}

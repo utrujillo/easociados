@@ -1,5 +1,5 @@
 <template lang="pug">
-section.fundador.d-flex.flex-xl-row.flex-lg-row.flex-md-row.flex-sm-column.flex-column.justify-content-center
+section#directivo.fundador.d-flex.flex-xl-row.flex-lg-row.flex-md-row.flex-sm-column.flex-column.justify-content-center
   .f-left.align-self-center.d-flex
     .texto.align-self-center
       div(data-aos='fade-right' data-aos-easing='ease-in-back' data-aos-delay='100' data-aos-duration='500')

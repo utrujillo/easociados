@@ -4,7 +4,7 @@
     h5 Procesando información
 div(v-else='')
   Banner
-  Navbar
+  Navbar(v-on:selectedItem='scrollToElement')
   Fundador
   Nosotros1
   Nosotros2
@@ -48,11 +48,14 @@ export default {
     return {
       categories: [],
       jobs: [],
-      loading: true
+      loading: true,
+      sticky: 0,
+      navbar: ''
     }
   },
   mounted: function () {
     this.index()
+    window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
     index: function() {
@@ -70,7 +73,24 @@ export default {
         console.log(`Error al leer la informacion ${errors}`)
         this.loading = false
       })
+
+      setTimeout( () => {
+        this.navbar = document.getElementById("navegacion")
+        this.sticky = this.navbar.offsetTop
+      }, 1000 )
     },
+    scrollToElement: function( id ) {
+      const el = document.getElementById( id )
+      
+      if( el )
+        el.scrollIntoView({ behavior: 'smooth' })
+    },
+    handleScroll: function() {
+      if( window.pageYOffset >= this.sticky )
+        this.navbar.classList.add( 'sticky' )
+      else
+        this.navbar.classList.remove( 'sticky' )
+    }
   }
 }
 </script>
