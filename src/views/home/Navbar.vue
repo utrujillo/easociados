@@ -1,12 +1,12 @@
 <template lang="pug">
 nav#navegacion.navbar.navbar-expand-lg.navbar-light.bg-custom
-  a.navbar-brand(href='/')
+  div.navbar-brand(@click='login')
     img.d-inline-block.align-top(src='@/assets/images/icons/navbar_logo.png', width='235', height='50')
   button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarText', aria-controls='navbarText', aria-expanded='false', aria-label='Toggle navigation')
     span.navbar-toggler-icon
   #navbarText.collapse.navbar-collapse
     ul.navbar-nav.ml-auto
-      li.nav-item.active
+      li.nav-item
         a.nav-link(@click='selectedItem("inicio")') Inicio 
       li.nav-item
         a.nav-link(@click='selectedItem("directivo")') Directivo
@@ -26,6 +26,9 @@ export default {
   methods: {
     selectedItem ( val ) {
       this.$emit('selectedItem', val)
+    },
+    login () {
+      this.$router.push('/login')
     }
   }
 }
