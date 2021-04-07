@@ -28,16 +28,34 @@ export default {
   },
   methods: {
     login() {
+      this.$alertify.warning('Verificando credenciales...');
       this.$store.dispatch('retreiveToken', {
         username: this.username,
         password: this.password
       }).then( response => {
+        this.$alertify.success('Acceso autorizado');
         this.$router.push({ name: 'Dashboard' })
         return response
-      })
+      }).catch( error => {
+        console.log(`Error al actualizar categoria ${error}`)
+        this.alertError( error.response.data )
+        return error
+      } )
     },
     landingPage() {
       this.$router.push('/')
+    },
+    alertError (errors) {
+      let err = Object.entries(errors),
+      errMessage = '<ul style="padding: 0; margin: 0;">'
+      err.forEach(e => {
+        errMessage += `<li>${e[0]} - ${e[1]}</li>`
+      });
+      errMessage += '</ul>'
+      
+      this.$alertify.alert('Ops, algo salio mal!!', errMessage , () =>
+        this.$alertify.warning()
+      );
     }
   }
 }
