@@ -231,7 +231,7 @@ export default {
       .then(response => {
         let status = response.status
         if( status == 204 )
-          this,this.defaultData()
+          this.defaultData()
         this.loading = false
         this.$alertify.success('Usuario eliminado satisfactoriamente');
         $('#modalDelete').modal('hide')
