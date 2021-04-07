@@ -41,10 +41,10 @@ div(v-else='')
             tbody
               tr(v-for='u in users')
                 td.d-flex.justify-content-center 
-                  fas(icon='pen', v-if='!u.editar').green.mr-2(@click="u.editar = true")
-                  fas(icon='times', v-if='u.editar', @click="u.editar = false").orange.mr-2
-                  fas(icon='key')(@click="modalPassword(u.id)").purple.mr-2
-                  fas(icon='trash').red(@click="modalDelete(u)")
+                  fas(icon='pen', v-if='!u.editar').green.mr-2(@click="u.editar = true", :title="`${u.id}`")
+                  fas.orange.mr-2(icon='times', v-if='u.editar', @click="u.editar = false", :title="`${u.id}`")
+                  fas.purple.mr-2(icon='key', @click="modalPassword(u.id)", :title="`${u.id}`")
+                  fas.red(icon='trash', @click="modalDelete(u)", :title="`${u.id}`")
                 td 
                   input(v-if='u.editar', v-model='u.nombre', @keyup.enter='update(u)').form-control
                   span(v-else) {{ u.nombre }}
@@ -198,25 +198,29 @@ export default {
       $('#modalPassword').modal('show')
     },
     updatePwd () {
-      let obj = {
-        user: {
-          password: this.updatePassword.password,
-          password_confirmation: this.updatePassword.password_confirmation
+      if( this.updatePassword.password.length < 6 || this.updatePassword.password_confirmation.length < 6 ){
+        this.$alertify.warning('La contraseña es demasiado corta');
+      } else {
+        let obj = {
+          user: {
+            password: this.updatePassword.password,
+            password_confirmation: this.updatePassword.password_confirmation
+          }
         }
+        this.$http.patch(`/v1/users/${this.updatePassword.user_id}/update_password`, obj,{ headers: { 'Authorization': `Berear ${this.$store.state.token}` } } )
+        .then(response => {
+          let status = response.status
+          if( status == 200 )
+            this.defaultData()
+          this.loading = false
+          this.$alertify.success('Usuario eliminado satisfactoriamente');
+          $('#modalPassword').modal('hide')
+        }).catch(error => {
+          console.log(`Error al actualizar categoria ${error}`)
+          this.alertError( error.response.data )
+          this.loading = false
+        })
       }
-      this.$http.patch(`/v1/users/${this.updatePassword.user_id}/update_password`, obj,{ headers: { 'Authorization': `Berear ${this.$store.state.token}` } } )
-      .then(response => {
-        let status = response.status
-        if( status == 200 )
-          this.defaultData()
-        this.loading = false
-        this.$alertify.success('Usuario eliminado satisfactoriamente');
-        $('#modalPassword').modal('hide')
-      }).catch(error => {
-        console.log(`Error al actualizar categoria ${error}`)
-        this.alertError( error.response.data )
-        this.loading = false
-      })
     },
     modalDelete (user) {
       this.itemToDelete = user
