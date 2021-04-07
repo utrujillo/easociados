@@ -11,13 +11,15 @@ div
 import Navbar from '@/views/dashboard/Navbar.vue'
 import Categorias from '@/views/dashboard/Categorias.vue'
 import Trabajos from '@/views/dashboard/Trabajos.vue'
+import Usuarios from '@/views/dashboard/Usuarios.vue'
 
 export default {
   name: 'Dashboard',
   components: {
     Navbar,
     Categorias,
-    Trabajos
+    Trabajos,
+    Usuarios
   },
   data() {
     return {
@@ -35,6 +37,7 @@ export default {
       switch(component){
         case 'cat': this.currentComponent = Categorias; break;
         case 'work': this.currentComponent = Trabajos; break;
+        case 'users': this.currentComponent = Usuarios; break;
         default: this.currentComponent = '';
       }
       

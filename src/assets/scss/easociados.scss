@@ -20,6 +20,8 @@ h1.montserrat{ font-family: 'Montserrat', sans-serif; font-size: 36px; }
 .fw-5{ font-weight: 500; }
 .fw-6{ font-weight: 600; }
 
+.fs-small{ font-size: .8rem; }
+
 .black{ color: #494748; }
 .black2{ color: #26313C; }
 .gray{ color: #747377; }
@@ -37,3 +39,15 @@ h1.montserrat{ font-family: 'Montserrat', sans-serif; font-size: 36px; }
   width: 100%;
   z-index: 10;
 }
+
+.alertify .ajs-header,
+.alertify .ajs-footer .ajs-buttons .ajs-button{
+  background: #FF2632 !important;
+  color: white !important;
+}
+
+.alertify .ajs-commands button.ajs-close{
+  background: url('~@/assets/images/icons/close.png') no-repeat !important;
+}
+
+.svg-inline--fa:hover{ cursor: pointer; }

@@ -206,7 +206,4 @@ export default {
 
 <style lang="scss" scoped>
   @import './src/assets/scss/dashboard/dashboard.scss';
-  .svg-inline--fa:hover{ 
-    cursor: pointer; 
-  }
 </style>
