@@ -10,29 +10,28 @@ section.opinion.pb-5
         .left-o.d-flex.justify-content-center.flex-column.align-items-center
           .opinion-image-outside.d-flex.justify-content-center.align-items-center
             .opinion-image-inside.d-flex.justify-content-center.align-items-center
-              img(src='@/assets/images/photos/escudo.png').img-fluid
+              img(:src='parentData.opinion.foto | toDisplayImage' v-if="parentData.opinion.foto").img-fluid
+              
           .opinion-text.d-flex.justify-content-between.align-items-center
-            .arrow-left.d-flex.justify-content-center.align-items-center
-              img(src='@/assets/images/icons/arrow-left.png').img-fluid
-            .title-image.green H. Ayuntamiento del municipio de Coyuca de Benitez
-            .arrow-right.d-flex.justify-content-center.align-items-center
-              img(src='@/assets/images/icons/arrow-right.png').img-fluid
+            span
+            .title-image.green {{ parentData.opinion.cliente }}
+            span
       .right-o.d-flex.flex-column
         div(data-aos='fade-left' data-aos-delay='200' data-aos-duration='500')
-          p.mt-5.gray.fw-2 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
-            | has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-            | of type and scrambled it to make a type specimen book.".
+          p.mt-5.gray.fw-2 "{{ parentData.opinion.descripcion }}".
           .stars.d-flex
-            .star
-            .star
-            .star
-            .star
-            .star
+            .star(v-for='i in parentData.opinion.calificacion')
 </template>
 
 <script>
 export default{
-  name: 'Opinion'
+  name: 'Opinion',
+  props: { parentData: Object },
+  filters: {
+    toDisplayImage( img ){
+      return `${process.env.VUE_APP_API_IMG}${img}`
+    }
+  },
 }
 </script>
 

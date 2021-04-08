@@ -17,16 +17,35 @@ div
           | diversos puestos a nivel directivo y técnico, tanto en áreas de gobierno y
           | operativas, en Dependencias gubernamentales.
         .d-flex.justify-content-end.mr-md-5.mr-lg-5.mr-xl-5(data-aos='fade-up' data-aos-delay='700' data-aos-duration='500')
-          .gradient-button.d-flex.justify-content-center 
+          .gradient-button.d-flex.justify-content-center(@click='launchNosotrosModal') 
             span.align-self-center Leer más
   //- Parte 3
   section.nosotros-3.d-flex.justify-content-center.align-items-center
     div(data-aos='flip-down' data-aos-duration='500')
       h1.montserrat.white.mb-0.text-center Más de 10 años de experiencia nos respaldan
+  
+  #nosotrosModal.modal.fade(tabindex='-1' role='dialog', ref='modalNosotros')
+      .modal-dialog.modal-lg
+        .modal-content.rounded-0
+          .modal-header
+            h5.modal-title Nosotros
+            button.close(type='button' data-dismiss='modal' aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            | Enviar informacion que se debera mostrar en este apartado
+            div.d-flex.justify-content-end
+              button.btn.btn-info.rounded-0(type='button' data-dismiss='modal') Cerrar
 </template>
 
 <script>
+import $ from 'jquery'
+
 export default {
-  name: 'Nosotros2'
+  name: 'Nosotros2',
+  methods: {
+    launchNosotrosModal() {
+      $('#nosotrosModal').modal('show')
+    }
+  }
 }
 </script>

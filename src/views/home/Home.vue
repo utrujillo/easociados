@@ -10,7 +10,7 @@ div(v-else='')
   Nosotros2
   Servicios(:parentData='{ categories: categories, jobs: jobs }')
   Portafolio(:parentData='{ categories: categories, jobs: jobs }')
-  Opinion
+  Opinion(:parentData='{ opinion: opinion }')
   Contacto
   Mapa
   Footer
@@ -61,12 +61,14 @@ export default {
     index: function() {
       const reqCategory = this.$http.get('/v1/categories')
       const reqJob      = this.$http.get('/v1/jobs')
+      const reqOpinion  = this.$http.get('/v1/opinions/random')
       
-      this.$http.all([reqCategory, reqJob])
+      this.$http.all([reqCategory, reqJob, reqOpinion])
       .then(this.$http.spread((...responses) => {
         // Mostrando las opciones del catalogo dependiendo de la vista
         this.categories = responses[0].data
         this.jobs       = responses[1].data
+        this.opinion    = responses[2].data
         this.loading    = false
       })).catch(errors => {
         // Lanzar toast
@@ -76,7 +78,9 @@ export default {
 
       setTimeout( () => {
         this.navbar = document.getElementById("navegacion")
-        this.sticky = this.navbar.offsetTop
+        if( this.navbar != '' || this.navbar != null){
+          this.sticky = this.navbar.offsetTop  
+        }
       }, 1500 )
     },
     scrollToElement: function( id ) {
@@ -86,10 +90,9 @@ export default {
         el.scrollIntoView({ behavior: 'smooth' })
     },
     handleScroll: function() {
-      if( window.pageYOffset >= this.sticky )
-        this.navbar.classList.add( 'sticky' )
-      else
-        this.navbar.classList.remove( 'sticky' )
+      if( this.navbar != '' || this.navbar != null){
+        window.pageYOffset >= this.sticky ? this.navbar.classList.add( 'sticky' ) : this.navbar.classList.remove( 'sticky' )
+      } 
     }
   }
 }
