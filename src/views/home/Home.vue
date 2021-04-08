@@ -77,7 +77,7 @@ export default {
       setTimeout( () => {
         this.navbar = document.getElementById("navegacion")
         this.sticky = this.navbar.offsetTop
-      }, 3000 )
+      }, 1500 )
     },
     scrollToElement: function( id ) {
       const el = document.getElementById( id )

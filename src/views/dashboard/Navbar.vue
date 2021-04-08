@@ -15,6 +15,8 @@ div
         li.nav-item
           a.nav-link(v-on:click="emitToParent('work')") Trabajos
         li.nav-item
+          a.nav-link(v-on:click="emitToParent('opinion')") Opiniones
+        li.nav-item
           a.nav-link(v-on:click="emitToParent('users')") Usuarios
         li.nav-item
           a.nav-link

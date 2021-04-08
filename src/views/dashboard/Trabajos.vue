@@ -73,7 +73,7 @@ export default {
   data () {
     return {
       categories: [],
-      loading: false,
+      loading: true,
       jobs: [],
       job: {
         category_id: 0,
@@ -120,10 +120,12 @@ export default {
       })).catch(errors => {
         // Lanzar toast
         console.log(`Error al leer la informacion ${errors}`)
+        this.$alertify.warning( 'Ocurrio un error al solicitar la informacion del servidor, pongase en contacto con el administrador del sistema' )
         this.loading = false
       })
     },
     create: function() {
+      this.loading = true
       let formData = new FormData()
       formData.append( 'category_id', this.job.category_id )
       formData.append( 'nombre', this.job.nombre )
@@ -137,11 +139,16 @@ export default {
         .then(response => {
           if( response.status == 201 )
             this.defaultData()
+          this.$alertify.success('Trabajo creado satisfactoriamente');
+          this.loading = false
         }).catch(error => {
           console.log(`Error al crear el trabajo ${error}`)
+          this.alertError( error.response.data )
+          this.loading = false
         })
     },
     update: function (item) {
+      this.loading = true
       let formData = new FormData()
       formData.append( 'category_id', item.category.id )
       formData.append( 'nombre', item.nombre )
@@ -155,8 +162,12 @@ export default {
         let status = response.status
         if( status == 200 )
           this.index()
+        this.$alertify.success('Trabajo actualizado satisfactoriamente');
+        this.loading = false
       }).catch(error => {
         console.log(`Error al actualizar el trabajo ${error}`)
+        this.alertError( error.response.data )
+        this.loading = false
       })
     },
     edit: function (item) {
@@ -165,6 +176,7 @@ export default {
       $('#uploadJobImage').modal('show')
     },
     destroy: function (id) {
+      this.loading = true
       this.$http.delete(`/v1/jobs/${id}`, {
         headers: {
           'Authorization': `Berear ${this.$store.state.token}`
@@ -173,8 +185,12 @@ export default {
         let status = response.status
         if( status == 200 )
           this.index()
+        this.loading = false
+        this.$alertify.warning('Trabajo eliminado satisfactoriamente');
       }).catch(error => {
         console.log(`Error al eliminar el trabajo ${error}`)
+        this.alertError( error.response.data )
+        this.loading = false
       })
     },
     handleFileUpload: function () {
@@ -196,9 +212,23 @@ export default {
           this.index()
           $('#uploadJobImage').modal('hide')
         }
+        this.$alertify.success('Trabajo actualizado satisfactoriamente');
       }).catch(error => {
         console.log(`Error al actualizar el trabajo ${error}`)
+        this.alertError( error.response.data )
       })
+    },
+    alertError (errors) {
+      let err = Object.entries(errors),
+      errMessage = '<ul style="padding: 0; margin: 0;">'
+      err.forEach(e => {
+        errMessage += `<li>${e[0]} - ${e[1]}</li>`
+      });
+      errMessage += '</ul>'
+      
+      this.$alertify.alert('Ops, algo salio mal!!', errMessage , () =>
+        this.$alertify.warning()
+      );
     }
   }
 }

@@ -124,7 +124,6 @@ export default {
       $('#modalDelete').modal('show')
     },
     destroy: function () {
-      this.loading = true
       this.$http.delete(`/v1/categories/${this.itemToDelete.id}`, {
         headers: {
           'Authorization': `Berear ${this.$store.state.token}`
@@ -135,12 +134,10 @@ export default {
           this.defaultData()
         
         $('#modalDelete').modal('hide')
-        this.loading = false
         this.$alertify.success('Categoria eliminada satisfactoriamente');
       }).catch(error => {
         console.log(`Error al eliminar categoria ${error}`)
         this.alertError( error.response.data )
-        this.loading = false
       })
     },
     update: function (item) {
