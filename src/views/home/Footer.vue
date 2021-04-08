@@ -6,14 +6,19 @@
       p.fw-1.white Lunes a viernes ..... 8:00 - 17:00 hrs
       p.fw-1.white.mb-0 Sabados ................... 8:00 - 14:00 hrs
     .f-right.d-flex.justify-content-center.flex-column.align-items-center
-      .footer-logo
+      .footer-logo(@click="login")
       p.fw-1.white.mb-0 El mejor equipo de profesionales a tu disposición
 
 </template>
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  methods: {
+    login () {
+      this.$router.push('/login')
+    }
+  }
 }
 </script>
 
@@ -33,6 +38,7 @@ export default {
       height: 50px;
       background: url('~@/assets/images/icons/banner_logo.png') center center no-repeat;
       background-size: contain;
+      cursor: pointer;
     }
   }
 }

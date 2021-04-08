@@ -1,5 +1,5 @@
 <template lang="pug">
-section.services.d-flex.justify-content-center.flex-column
+section#servicios.services.d-flex.justify-content-center.flex-column
   div(data-aos='flip-up' data-aos-duration='500')
     h1.montserrat.purple Conoce nuestros servicios
   .squares.d-flex.justify-content-around.flex-lg-row.flex-xl-row.flex-column(v-for='obj in services')

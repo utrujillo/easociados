@@ -4,13 +4,13 @@
     h5 Procesando información
 div(v-else='')
   Banner
-  Navbar
+  Navbar(v-on:selectedItem='scrollToElement')
   Fundador
   Nosotros1
   Nosotros2
   Servicios(:parentData='{ categories: categories, jobs: jobs }')
   Portafolio(:parentData='{ categories: categories, jobs: jobs }')
-  Opinion
+  Opinion(:parentData='{ opinion: opinion }')
   Contacto
   Mapa
   Footer
@@ -27,7 +27,7 @@ import Portafolio from '@/views/home/Portafolio.vue'
 import Opinion from '@/views/home/Opinion.vue'
 import Contacto from '@/views/home/Contacto.vue'
 import Mapa from '@/views/home/Mapa.vue'
-import Footer from '@/views/Footer.vue'
+import Footer from '@/views/home/Footer.vue'
 
 export default {
   name: 'Home',
@@ -48,29 +48,52 @@ export default {
     return {
       categories: [],
       jobs: [],
-      loading: true
+      loading: true,
+      sticky: 0,
+      navbar: ''
     }
   },
   mounted: function () {
     this.index()
+    window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
     index: function() {
       const reqCategory = this.$http.get('/v1/categories')
       const reqJob      = this.$http.get('/v1/jobs')
+      const reqOpinion  = this.$http.get('/v1/opinions/random')
       
-      this.$http.all([reqCategory, reqJob])
+      this.$http.all([reqCategory, reqJob, reqOpinion])
       .then(this.$http.spread((...responses) => {
         // Mostrando las opciones del catalogo dependiendo de la vista
         this.categories = responses[0].data
         this.jobs       = responses[1].data
+        this.opinion    = responses[2].data
         this.loading    = false
       })).catch(errors => {
         // Lanzar toast
         console.log(`Error al leer la informacion ${errors}`)
         this.loading = false
       })
+
+      setTimeout( () => {
+        this.navbar = document.getElementById("navegacion")
+        if( this.navbar != '' || this.navbar != null){
+          this.sticky = this.navbar.offsetTop  
+        }
+      }, 1500 )
     },
+    scrollToElement: function( id ) {
+      const el = document.getElementById( id )
+      
+      if( el )
+        el.scrollIntoView({ behavior: 'smooth' })
+    },
+    handleScroll: function() {
+      if( this.navbar != '' || this.navbar != null){
+        window.pageYOffset >= this.sticky ? this.navbar.classList.add( 'sticky' ) : this.navbar.classList.remove( 'sticky' )
+      } 
+    }
   }
 }
 </script>

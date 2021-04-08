@@ -30,24 +30,45 @@ div(v-else='')
             tbody
               tr(v-for='category in categories')
                 td.d-flex.justify-content-center 
-                  fas(icon='pen', v-if='!category.editar').green.mr-2(@click="category.editar = true")
-                  fas(icon='times', v-if='category.editar', @click="category.editar = false").orange.mr-2
-                  fas(icon='trash').red(@click="destroy(category.id)")
+                  fas.green.mr-2(icon='pen', v-if='!category.editar', @click="category.editar = true", :title="`${category.id}`")
+                  fas.orange.mr-2(icon='times', v-if='category.editar', @click="category.editar = false", :title="`${category.id}`")
+                  fas.red(icon='trash', @click="modalDelete(category)", :title="`${category.id}`")
                 td 
                   input(v-if='category.editar', v-model='category.nombre', @keyup.enter='update(category)').form-control
                   span(v-else) {{ category.nombre }}
                 td 
                   input(v-if='category.editar', v-model='category.descripcion', rows="1", @keyup.enter='update(category)').form-control
                   span(v-else) {{ category.descripcion }}
+  
+  //- Delete modal
+  #modalDelete.modal.fade(tabindex='-1' role='dialog', ref='modalDelete')
+    .modal-dialog
+      .modal-content
+        .modal-header.bg-danger.text-white
+          h5.modal-title Eliminacion de categoria
+          button.close(type='button' data-dismiss='modal' aria-label='Close')
+            span.text-white(@click='defaultData') ×
+        .modal-body
+          .row
+            .col-12
+              p Estas completamente seguro de querer la siguiente categoria?
+              b {{ itemToDelete.nombre }}
+              p.text-right.text-danger.fs-small * Al eliminar la categoria se eliminaran todos los trabajos vinculados dicha categoria
+        .modal-footer
+          button.btn.btn-danger(type='button' data-dismiss='modal', @click='defaultData') Cerrar
+          button.btn.btn-primary(type='button', @click='destroy') Eliminar
 </template>
 
 <script>
+import $ from 'jquery'
+
 export default {
   name: 'Categorias',
   data() {
     return {
       categories: [],
       loading: false,
+      itemToDelete: {},
       category: {
         nombre: '',
         descripcion: '',
@@ -61,6 +82,7 @@ export default {
   },
   methods: {
     defaultData: function () {
+      this.itemToDelete = {}
       this.category = {
               nombre: '',
               descripcion: '',
@@ -90,14 +112,19 @@ export default {
           this.defaultData()
         }
         this.loading = false
+        this.$alertify.success('Categoria creada satisfactoriamente');
       }).catch(error => {
         console.log(`Error al crear categoria ${error}`)
+        this.alertError( error.response.data )
         this.loading = false
       })
     },
-    destroy: function (id) {
-      this.loading = true
-      this.$http.delete(`/v1/categories/${id}`, {
+    modalDelete (category) {
+      this.itemToDelete = category
+      $('#modalDelete').modal('show')
+    },
+    destroy: function () {
+      this.$http.delete(`/v1/categories/${this.itemToDelete.id}`, {
         headers: {
           'Authorization': `Berear ${this.$store.state.token}`
         }
@@ -106,10 +133,11 @@ export default {
         if( status == 200 )
           this.defaultData()
         
-        this.loading = false
+        $('#modalDelete').modal('hide')
+        this.$alertify.success('Categoria eliminada satisfactoriamente');
       }).catch(error => {
         console.log(`Error al eliminar categoria ${error}`)
-        this.loading = false
+        this.alertError( error.response.data )
       })
     },
     update: function (item) {
@@ -126,10 +154,24 @@ export default {
         if( status == 200 )
           this.index()
         this.loading = false
+        this.$alertify.success('Categoria actualizada satisfactoriamente')
       }).catch(error => {
         console.log(`Error al actualizar categoria ${error}`)
+        this.alertError( error.response.data )
         this.loading = false
       })
+    },
+    alertError (errors) {
+      let err = Object.entries(errors),
+      errMessage = '<ul style="padding: 0; margin: 0;">'
+      err.forEach(e => {
+        errMessage += `<li>${e[0]} - ${e[1]}</li>`
+      });
+      errMessage += '</ul>'
+      
+      this.$alertify.alert('Ops, algo salio mal!!', errMessage , () =>
+        this.$alertify.warning()
+      );
     }
   }
 }

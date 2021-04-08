@@ -1,5 +1,5 @@
 <template lang="pug">
-section.portfolio
+section#portafolio.portfolio
   h5.montserrat.text-center.purple Vamos a explorar
   h1.montserrat.text-center.black2 Nuestro portafolio
   .gallery-images

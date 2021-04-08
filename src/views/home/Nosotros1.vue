@@ -1,6 +1,6 @@
 <template lang="pug">
 //- Parte 1
-section.nosotros-1.d-flex.flex-column.justify-content-center.align-items-center
+section#nosotros.nosotros-1.d-flex.flex-column.justify-content-center.align-items-center
   div(data-aos='zoom-in-up')
     h1.montserrat.white.text-center.margin-special Nuestro proceso de trabajo
 

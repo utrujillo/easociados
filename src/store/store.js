@@ -32,6 +32,8 @@ export const store = new Vuex.Store({
           let token = response.data.access_token
           //Verificar si utilizar localStorage o Cookies
           localStorage.setItem('access_token', token)
+          localStorage.setItem('username', response.data.username)
+          localStorage.setItem('usuario', response.data.nombre_completo)
           // Actualizamos la variable con una mutación
           context.commit('retreiveToken', token)
           resolve(response)
