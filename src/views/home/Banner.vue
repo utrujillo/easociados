@@ -4,7 +4,7 @@
       .banner-logo
         img(src='@/assets/images/icons/banner_logo.png').img-fluid
 
-      h1.banner-title.mt-4 Consultoría, mantenimiento y Gestoría ambiental
+      h1.banner-title.mt-4 Consultoría, Mantenimiento y Gestoría Ambiental
       h3.banner-subtitle.mt-2 El mejor equipo de profesionales a tu disposición
       div(data-aos='zoom-in')
         .basic-button.mt-2(@click='launchBannerModal') Leer más
