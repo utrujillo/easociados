@@ -100,6 +100,8 @@ export default {
       })  
     },
     create: function() {
+      console.log(`LocalStorage: ${localStorage.getItem('access_token')} `)
+      console.log(`Store: ${this.$store.state.token} `)
       this.loading = true
       this.$http.post('/v1/categories', this.category, {
         headers: {

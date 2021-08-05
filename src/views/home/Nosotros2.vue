@@ -22,7 +22,7 @@ div
   //- Parte 3
   section.nosotros-3.d-flex.justify-content-center.align-items-center
     div(data-aos='flip-down' data-aos-duration='500')
-      h1.montserrat.white.mb-0.text-center Más de 10 años de experiencia nos respaldan
+      h1.montserrat.white.mb-0.text-center Más de 30 años de experiencia nos respaldan
   
   #nosotrosModal.modal.fade(tabindex='-1' role='dialog', ref='modalNosotros')
       .modal-dialog.modal-lg
