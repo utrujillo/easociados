@@ -6,6 +6,7 @@ div(v-else='')
   Banner
   Navbar(v-on:selectedItem='scrollToElement')
   Fundador
+  Nosotros
   Estrategia1
   Estrategia2
   Servicios(:parentData='{ categories: categories, jobs: jobs }')
@@ -20,6 +21,7 @@ div(v-else='')
 import Banner from '@/views/home/Banner.vue'
 import Navbar from '@/views/home/Navbar.vue'
 import Fundador from '@/views/home/Fundador.vue'
+import Nosotros from '@/views/home/Nosotros.vue'
 import Estrategia1 from '@/views/home/Estrategia1.vue'
 import Estrategia2 from '@/views/home/Estrategia2.vue'
 import Servicios from '@/views/home/Servicios.vue'
@@ -35,6 +37,7 @@ export default {
     Banner,
     Navbar,
     Fundador,
+    Nosotros,
     Estrategia1,
     Estrategia2,
     Servicios,
