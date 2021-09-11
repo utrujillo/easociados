@@ -3,7 +3,7 @@ section#nosotros.nosotros.p-5.d-flex.flex-column.align-items-center
   div(data-aos='flip-up' data-aos-duration='500')
     h1.montserrat.purple Servicios que Ofertamos
 
-  div.nosotros-text.montserrat.mt-4
+  div.nosotros-text.montserrat.my-4
     | EO&ASOCIADOS, está integrada por profesionistas de las distintas ramas de la ciencia, que tiene como fin ofrecer y proporcionar servicios profesionales de excelencia a los 3 niveles de gobierno, así como a  las personas físicas y morales del sector social, público y privado. 
   
   .d-flex.justify-content-end.mr-md-5.mr-lg-5.mr-xl-5(data-aos='fade-up' data-aos-delay='700' data-aos-duration='500')
