@@ -1,4 +1,4 @@
-section.nosotros-1{
+section.estrategia-1{
   background: #23496C;
   min-height: 680px;
 	width: 100%;
@@ -49,7 +49,7 @@ section.nosotros-1{
 	}
 }
 
-section.nosotros-2{
+section.estrategia-2{
 	min-height: 425px;
 	padding: 50px 0;
 	.us-left{
@@ -66,7 +66,7 @@ section.nosotros-2{
 	}
 }
 
-section.nosotros-3{
+section.estrategia-3{
 	height: 175px;
 	width: 100%;
 	background: url('~@/assets/images/photos/polygon.png') center center no-repeat;
@@ -74,7 +74,7 @@ section.nosotros-3{
 
 /* Resoluciones entre 769 y 1200 px */
 @media screen and (min-width: 769px) and (max-width: 1200px) {
-	section.nosotros-1 {
+	section.estrategia-1 {
 		.timeline{
 			.line{
 				width: 90%;
@@ -91,7 +91,7 @@ section.nosotros-3{
 
 /* Resoluciones menores a 768px */
 @media screen and (max-width: 768px) {
-	section.nosotros-1 {
+	section.estrategia-1 {
 		.margin-special{ margin-top: 0px; }
 		.timeline{
 			.line{
@@ -108,7 +108,7 @@ section.nosotros-3{
 		}
 	}
 
-	section.nosotros-2{
+	section.estrategia-2{
 		.us-right{
 			width: 90%;
 			h1{ text-align: center; }

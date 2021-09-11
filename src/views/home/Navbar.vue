@@ -13,6 +13,8 @@ nav#navegacion.navbar.navbar-expand-lg.navbar-light.bg-custom
       li.nav-item
         a.nav-link(@click='selectedItem("nosotros")') Nosotros
       li.nav-item
+        a.nav-link(@click='selectedItem("estrategia")') Estrategia de Trabajo
+      li.nav-item
         a.nav-link(@click='selectedItem("servicios")') Servicios
       li.nav-item
         a.nav-link(@click='selectedItem("portafolio")') Portafolio

@@ -7,10 +7,10 @@ section#directivo.fundador.d-flex.flex-xl-row.flex-lg-row.flex-md-row.flex-sm-co
         h1.montserrat.green.fw-3.mt-3 Socio Fundador
         p.gray.fw-2.text-justify.mt-4 Nacio en Atoyac de Álvarez, Estado de Guerrero, México, el 12 de junio de 1956.
         p.gray.fw-2.text-justify Profesor y Licenciado en Derecho por la Universidad Autónoma de Guerrero.
-        p.gray.fw-2.text-justify Llevó a cabo sus estudios de Maestría en Administración en la Unidad de Estudios de Postgrado e Investigación en la misma institución. Cuenta con un Diplomado en Derecho Municipal y Técnicas Lesgislativas, en la Universidad Americada de Acapulco.
-        div(data-aos='fade-up' data-aos-delay='300' data-aos-duration='500')
-          .gradient-button.d-flex.justify-content-center(@click='launchDirectivoModal')
-            span.align-self-center Leer más
+        p.gray.fw-2.text-justify Llevó a cabo sus estudios de Maestría en Administración en la Unidad de Estudios de Postgrado e Investigación en la misma institución. Cuenta con un Diplomado en Derecho Municipal y Técnicas Legislativas, en la Universidad Americada de Acapulco.
+        //- div(data-aos='fade-up' data-aos-delay='300' data-aos-duration='500')
+        //-   .gradient-button.d-flex.justify-content-center(@click='launchDirectivoModal')
+        //-     span.align-self-center Leer más
   .f-right.align-self-center.d-flex
     div(data-aos='fade-left' data-aos-duration='500')
       .circular-portrait

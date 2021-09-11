@@ -6,8 +6,8 @@
 
       h1.banner-title.mt-4 Consultoría, Mantenimiento y Gestoría Ambiental
       h3.banner-subtitle.mt-2 El mejor equipo de profesionales a tu disposición
-      div(data-aos='zoom-in')
-        .basic-button.mt-2(@click='launchBannerModal') Leer más
+      //- div(data-aos='zoom-in')
+      //-   .basic-button.mt-2(@click='launchBannerModal') Leer más
   
     #bannerModal.modal.fade(tabindex='-1' role='dialog', ref='modalBanner')
       .modal-dialog.modal-lg

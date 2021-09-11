@@ -1,7 +1,7 @@
 <template lang="pug">
 section#servicios.services.d-flex.justify-content-center.flex-column
   div(data-aos='flip-up' data-aos-duration='500')
-    h1.montserrat.purple Conoce nuestros servicios
+    h1.montserrat.purple Servicios que Ofertamos
   .squares.d-flex.justify-content-around.flex-lg-row.flex-xl-row.flex-column(v-for='obj in services')
     span(v-for='(category, index) in obj')
       div(data-aos='fade-right', data-aos-delay='300', data-aos-duration='1000', v-if='index == 0')
